@@ -1,0 +1,11 @@
+{
+  "uid": 1234,
+  "id": "asdasd123456",
+  "firstname": "max",
+  "lastname": "mustermann",
+  "phone": "+436761231234",
+  "mail": "asd@sdf.com",
+  "age": 20,
+  "days": 5,
+  "section": "infra"
+}

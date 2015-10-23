@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TOF</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.css" />
+<script src="./js/jquery-2.1.4.js"></script>
+<script src="./js/jquery.mobile-1.4.5.js"></script>
+
+
+<script>
+	$(document).bind('mobileinit', function() {
+		$.mobile.changePage.defaults.changeHash = false;
+		$.mobile.hashListeningEnabled = false;
+		$.mobile.pushStateEnabled = false;
+	});
+</script>
+
+<style type='text/css'>
+<!--
+@media only screen and (min-width: 600px) {
+	.ui-page {
+		width: 1000px !important;
+		margin: 0 auto !important;
+		position: relative !important;
+		border-right: 1px #666 outset !important;
+		border-left: 1px #666 outset !important;
+		background: rgba(220, 220, 220, 0.9);
+	}
+}
+-->
+</style>
+<style type="text/css">
+<!--
+a:link {
+	color: #fafafa;
+	text-decoration: none;
+}
+
+a:active {
+	color: #fafafa;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #fafafa;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fafafa;
+	text-decoration: none;
+}
+-->
+</style>
+
+
+</head>
+<body>
+
+	<!-- MENU PAGE -->
+	<div data-role="page" id="startpage">
+		<div data-role="header">
+			<h1>TOF//DB</h1>
+		</div>
+		<!-- /header -->
+
+		<div role="main" class="ui-content">
+			<p>Dies ist was auch immer</p>
+			<ul data-role="listview"
+				style="background: rgba(220, 220, 220, 0.9);">
+				<li data-role="list-divider">Intern</li>
+				<li><a href="#edit">Daten editieren</a></li>
+				<li><a href="./showdata.html" data-url="./showdata.html" rel="external">Daten zeigen</a></li>
+				<!-- hier kann man mehr einfuegen zb suchen usw -->
+			</ul>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page -->
+</body>
+</html>
