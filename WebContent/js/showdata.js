@@ -1,8 +1,17 @@
 console.log("i m alive :) ");
 
 
+function init(){
+	loadData();
+	//bind search
+	$("#filterTable-input").bind("propertychange change click keyup input paste", function(event){
+	    
+	    console.log("asd");
+	 });
+}
+
+
 function loadData(){
-	
 	console.log("loadData ");
 	
 	//TODO: to use real data -> comment
@@ -24,9 +33,23 @@ function loadData(){
 	    error: function(error){
 	    	console.log("error --> ");
 	    	console.log(error);
-	    }
-	
+	    }	
 	});	
+}
+
+function search(query){
+	console.log("Search for: "+query);
+	clearData();
+	 $.ajax({
+         beforeSend: function() { $.mobile.showPageLoadingMsg(); }, //Show spinner
+         complete: function() { $.mobile.hidePageLoadingMsg() }, //Hide spinner
+         url: '../tof/search/'+encodeURI(query),
+         dataType: 'json',
+         success: function(data) {
+        	 console.log("");
+             console.log(data);
+         }
+     });
 }
 
 function drawTable(data) {
@@ -39,9 +62,14 @@ function drawTable(data) {
     }
 }
 
+function clearData(){
+	$("#show-data-table-header").clear();
+	$("#show-data-table").clear();
+}
+
 function drawRowHeaders(rowData){
 	var row = $("<tr />")
-    $("#show-data-table-header").append(row);
+    $("#show-data-table").append(row);
 	
 	var keys = Object.getOwnPropertyNames(rowData);
 	console.log(keys);
