@@ -37,10 +37,10 @@ function search(query) {
 	}
 	$.ajax({
 		beforeSend : function() {
-			$.mobile.showPageLoadingMsg();
+			$.mobile.loading('show');
 		}, // Show spinner
 		complete : function() {
-			$.mobile.hidePageLoadingMsg()
+			$.mobile.loading('hide');
 		}, // Hide spinner
 		url : '../tof/search?q=' + encodeURI(query),
 		dataType : 'json',
