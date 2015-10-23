@@ -9,9 +9,6 @@
 <script src="./js/jquery-2.1.4.js"></script>
 <script src="./js/jquery.mobile-1.4.5.js"></script>
 
-<script src="./js/login.js"></script>
-
-
 <style type='text/css'>
 <!--
 @media only screen and (min-width: 600px) {
@@ -51,35 +48,28 @@ a:hover {
 </style>
 
 
-
 </head>
 <body>
-	<div data-role="page" id="show-data">
 
+	<!-- MENU PAGE -->
+	<div data-role="page" id="startpage">
 		<div data-role="header">
-			<h1>Login</h1>
+			<h1>TOF//DB</h1>
 		</div>
 		<!-- /header -->
 
 		<div role="main" class="ui-content">
-			<form id="login">
-				<label for="user">Name:</label>
-				<input id="user" type="text" required>
-				<label for="pwd">Password:</label>
-				<input id="pwd" type="password" required>
-				<button type="submit">Login</button>
-			</form>
-
-			
+			<p>Dies ist was auch immer</p>
+			<ul data-role="listview"
+				style="background: rgba(220, 220, 220, 0.9);">
+				<li data-role="list-divider">Intern</li>
+				<li><a href="#edit">Daten editieren</a></li>
+				<li><a href="./showdata.html" data-url="./showdata.html" rel="external">Daten zeigen</a></li>
+				<!-- hier kann man mehr einfuegen zb suchen usw -->
+			</ul>
 		</div>
+		<!-- /content -->
 	</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		init();
-	});
-</script>
-
-
-
+	<!-- /page -->
 </body>
 </html>
