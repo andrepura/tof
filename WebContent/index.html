@@ -1,84 +1,70 @@
-<!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<title>TOF</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.css" />
-<script src="./js/jquery-2.1.4.js"></script>
-<script src="./js/jquery.mobile-1.4.5.js"></script>
-
-<script src="./js/login.js"></script>
 
 
-<style type='text/css'>
-<!--
-@media only screen and (min-width: 600px) {
-	.ui-page {
-		width: 1000px !important;
-		margin: 0 auto !important;
-		position: relative !important;
-		border-right: 1px #666 outset !important;
-		border-left: 1px #666 outset !important;
-		background: rgba(220, 220, 220, 0.9);
-	}
-}
--->
-</style>
-<style type="text/css">
-<!--
-a:link {
-	color: #fafafa;
-	text-decoration: none;
-}
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 
-a:active {
-	color: #fafafa;
-	text-decoration: none;
-}
+<link rel="stylesheet" href="../css/angular-material.min.css">
+<link rel="stylesheet" href="../css/style.css">
 
-a:visited {
-	color: #fafafa;
-	text-decoration: none;
-}
+<script src="../js/require.js"></script>
+<script src="../js/script.js"></script>
 
-a:hover {
-	color: #fafafa;
-	text-decoration: none;
-}
--->
-</style>
-
-
-
+<meta name="viewport" content="initial-scale=1" />
+<title>Train of Hope</title>
 </head>
-<body>
-	<div data-role="page" id="show-data">
+<body layout="column" ng-controller="AppCtrl">
 
-		<div data-role="header">
-			<h1>Login v2</h1>
+	<md-card id="login-card" ng-hide="uid"><md-card-content>
+	<form name="loginForm" ng-submit="login(user,pwd)">
+	<md-input-container>
+  		<label>Benutzername</label>
+  		<input  type="text" ng-model="user" required>
+	</md-input-container>
+	<md-input-container>
+  		<label >Passwort</label>
+  		<input type="password" ng-model="pwd" required>
+	</md-input-container>
+	</form>
+	</md-card-content>
+	<div class="md-actions" layout="row" layout-align="center center">
+		<md-button ng-click="login(user,pwd)">Login</md-button>
+	</div>
+	</md-card>
+	<md-toolbar layout="row">
+	<div class="md-toolbar-tools">
+		<md-button ng-click="toggleSidenav('left')" hide-gt-sm
+			class="md-icon-button"> <md-icon aria-label="Menu"
+			md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+		</md-button>
+		<h1>TOH // DB</h1>
+	</div>
+	</md-toolbar>
+	<div layout="row" flex>
+		<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2"
+			md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+		<md-toolbar class="md-medium-tall"> <span>Toolbar</span>
+		</md-toolbar> 
+		<md-content layout="column" flex> 
+		<div>
+		<a ng-href='../#/'>home</a>
 		</div>
-		<!-- /header -->
-
-		<div role="main" class="ui-content">
-			<form id="login">
-				<label for="user">Name:</label>
-				<input id="user" type="text" required>
-				<label for="pwd">Password:</label>
-				<input id="pwd" type="password" required>
-				<button type="submit">Login</button>
-			</form>
-
+		
+		<div>
+		<a ng-href='../#/showdata'>showdata</a>
+		</div>
+		</md-content> 
 			
+		</md-sidenav>
+		<div layout="column" flex id="content">
+			<div ng-view></div>
+
 		</div>
 	</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		init();
-	});
-</script>
-
+	<!-- Angular Material Dependencies -->
 
 
 </body>

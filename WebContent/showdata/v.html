@@ -1,0 +1,7 @@
+<div ng-controller='showdata'>
+	<md-input-container>
+    	<label>Suchbegriff</label>
+    	<input name="search" ng-change='search(q)' ng-model="q" minlength="3">
+	</md-input-container>
+    <div ng-repeat="person in people">person.vorname</div>
+</div>

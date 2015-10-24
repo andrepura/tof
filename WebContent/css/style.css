@@ -1,0 +1,15 @@
+ .md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+}
+
+#login-card{
+	position: absolute;
+    z-index: 600;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 230px;
+    top: 36px;
+}
