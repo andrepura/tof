@@ -15,7 +15,7 @@ function login(name, pwd)
 {
 	console.log(name + pwd);
 	$.ajax({
-		url: './login',
+		url: './tof/login',
 	    type: 'post',
 	    dataType: 'json',
 	    data: {
@@ -27,8 +27,8 @@ function login(name, pwd)
 	}).error(function() {
 		if($('#pwd').val().toLowerCase()==='admin'){
 			window.location.replace("/menu.html");
-		}
-		alert('uje');
+		}else
+			alert('uje');
 	});
 	
 	
