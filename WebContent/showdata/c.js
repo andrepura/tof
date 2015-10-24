@@ -4,9 +4,15 @@ app.register.controller('showdata',['$scope','$http' , function($scope,$http){
 	$scope.search=function(q)
 	{
 		if(!q)
+		{
+			$scope.people = [];
 			return;
-		if(q.length<4)
+		}
+		if(q.length<3)
+		{
+			$scope.people = [];
 			return;
+		}
 		
 		$http({
 			method : 'GET',
@@ -16,8 +22,7 @@ app.register.controller('showdata',['$scope','$http' , function($scope,$http){
 			console.dir(response);
 			$scope.people=response.data;
 		}, function(error) {
-			if (pwd = 'admin')
-				$scope.uid = 13;
+			$scope.people = [];
 			console.dir(error);
 		});
 		
