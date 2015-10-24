@@ -4,7 +4,7 @@ var app = null;
 init = function() {
 	console.log('init');
 	app = angular.module('TofApp', [ 'ngAnimate', 'ngAria', 'ngMaterial',
-			'ngRoute' ]);
+			'ngRoute','ngMdIcons' ]);
 
 	app.controller('AppCtrl', [ '$scope', '$mdSidenav', '$http', '$location',
 			function($scope, $mdSidenav, $http, $location) {
@@ -110,7 +110,7 @@ loadLibs = function() {
 	console.log('libs');
 	require([ '../js/angular-route.min.js', '../js/angular-animate.min.js',
 			'../js/angular-aria.min.js', '../js/angular-messages.min.js',
-			'../js/angular-material.min.js', ], init);
+			'../js/angular-material.min.js', '../js/angular-material-icons.min.js'], init);
 
 };
 
