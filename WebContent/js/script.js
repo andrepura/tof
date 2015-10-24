@@ -11,7 +11,6 @@ init = function() {
 				$scope.toggleSidenav = function(menuId) {
 					$mdSidenav(menuId).toggle();
 				};
-				console.log('sdfsdf');
 
 				$scope.uid = null
 				$scope.login = function(user, pwd) {
@@ -22,13 +21,13 @@ init = function() {
 							username : user,
 							password : pwd
 						})
-					}).then(function successCallback(response) {
+					}).then(function (response) {
 						console.dir(response);
 						$scope.uid = 12;
-					}, function errorCallback(error) {
-						if (pwd = 'admin')
+					}, function (error) {
+						
+						if (pwd === 'admin')
 							$scope.uid = 13;
-						console.dir(error);
 					});
 				};
 

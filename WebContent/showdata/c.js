@@ -3,7 +3,10 @@ app.register.controller('showdata',['$scope','$http' , function($scope,$http){
 	$scope.people = [];
 	$scope.search=function(q)
 	{
-		console.log(q);
+		if(!q)
+			return;
+		if(q.length<4)
+			return;
 		
 		$http({
 			method : 'GET',
