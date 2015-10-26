@@ -19,7 +19,8 @@ app.register.controller('showdata',['$scope','$http' , function($scope,$http){
 			url :  '../tof/search?q=' + encodeURI(q)
 			
 		}).then(function(response) {
-			console.dir(response);
+			console.log(typeof response);
+			
 			$scope.people=response.data;
 		}, function(error) {
 			$scope.people = [];

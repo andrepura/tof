@@ -11,8 +11,15 @@ init = function() {
 				$scope.toggleSidenav = function(menuId) {
 					$mdSidenav(menuId).toggle();
 				};
+				
+				$scope.$on('$routeChangeStart', function(next, current) { 
+						$mdSidenav('left').toggle();
+					 });
 
-				$scope.uid = null
+				$scope.uid = null;
+				$scope.logout=function(){
+					$scope.uid = null;
+				};
 				$scope.login = function(user, pwd) {
 					$http({
 						method : 'POST',
